@@ -1,0 +1,289 @@
+<!--
+    * Name of Project  : Assignment #1
+    * Written by       : Mijung Kwon (Mkwon6638@conestogac.on.ca, 8736638)
+    * Date             : Oct 06, 2023
+    * Programming Mobile Applications (PROG2435)
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--JQuery-->
+    <script src ="js/lib/jquery-2.1.4.js"></script>
+    <!--JQuery mobile-->
+    <script src ="js/lib/jquery.mobile-1.4.5.js"></script>
+    <!--JQuery mobile css-->
+    <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+    <title>MK Review A1</title>
+    <style>
+        .button-link {
+
+            text-align: left;
+            font-size: medium;
+        }
+
+        #centeredImage {
+            display: block;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<!--Home page-->
+<div id="MKHomePage" data-role="page">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h1>MK Review A1</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#MKHomePage" data-icon="home"
+                       class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#MKAddReviewPage" data-icon="gear">Add</a></li>
+                <li><a href="#MKViewReviewPage" data-icon="star">Reviews</a></li>
+                <li><a href="#MKSettingsPage" data-icon="star">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role ="content">
+
+        <h2>Mijung Kwon's Review A1 App</h2>
+        <p> Welcome to the Mijung Kwon's Review A1 App. A prototype designed for mobile programming class.
+            This is the first iteration of the app to keep track of different places
+            you visited along with your reviews. </p>
+
+        <img id="centeredImage" src ="img/mk-image.png" width="300" height="300" >
+        <p>
+            Please feel free to contact me if you have any suggestions!
+        </p>
+        <br>
+        <a href="#" class="button-link" data-role="button" data-icon="plus" data-iconpos="left" data-transition="flip" data-rel="dialog">Call: 519.748.2526</a>
+        <a href="#" class="button-link" data-role="button" data-icon="plus" data-iconpos="left"  data-transition="flip" data-rel="dialog">Email: mkwon6638@conestogac.on.ca</a>
+        <a href="#" class="button-link" data-role="button" data-icon="plus" data-iconpos="left"  data-transition="flip" data-rel="dialog">Web: www.conestogac.on.ca</a>
+
+    </section>
+
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h1>&copy; 2023 Mijung Kwon</h1>
+    </footer>
+</div>
+
+<!--Add Reviews page-->
+<div id="MKAddReviewPage" data-role="page">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h1>Add a Review</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#MKHomePage" data-icon="home"
+                       class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#MKAddReviewPage" data-icon="gear">Add</a></li>
+                <li><a href="#MKViewReviewPage" data-icon="star">Reviews</a></li>
+                <li><a href="#MKSettingsPage" data-icon="star">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role="content">
+
+        <form id="frmAdd" name="frmAdd">
+            <label for="restaurantName">Restaurant Name:</label>
+            <input type="text" id="restaurantName" name="restaurantName">
+
+            <label for="businessId">Business ID:</label>
+            <input type="text" id="businessId" name="businessId">
+
+            <label for="state">Choose State:</label>
+            <select id="state" name="state" data-native-menu="false">
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                <option value="Northwest Territories">Northwest Territories</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="Nunavut">Nunavut</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Yukon">Yukon</option>
+            </select>
+
+            <label for="reviewerEmail">Reviewer Email:</label>
+            <input type="text" id="reviewerEmail" name="reviewerEmail">
+
+            <label for="reviewerComments">Reviewer Comments:</label>
+            <textarea id="reviewerComments" name="reviewerComments"></textarea>
+
+            <label for="rating">Rating:</label>
+            <input type="range" id="rating" name="rating" min="1" max="100" value="10" data-highlight="true">
+
+            <button type="button" id="saveButton" class="ui-btn-active">Save</button>
+        </form>
+    </section>
+
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h1>&copy; 2023 Mijung Kwon</h1>
+    </footer>
+</div>
+
+<!--List of Reviews page-->
+<div id="MKViewReviewPage" data-role="page">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h1>List of Reviews</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#MKHomePage" data-icon="home"
+                       class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#MKAddReviewPage" data-icon="gear">Add</a></li>
+                <li><a href="#MKViewReviewPage" data-icon="star">Reviews</a></li>
+                <li><a href="#MKSettingsPage" data-icon="star">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role ="content">
+        <ul data-role="listview" data-inset="true" id="lstViewReview" data-icon="gear" data-iconpos="right">
+
+            <li>
+                <a href="#MKModifyReviewPage" >
+                    <h3>Restaurant Name: Outback Restaurant</h3>
+                    <p>Business Id: BN001</p>
+                    <p>State: Ontario</p>
+                    <p>Reviewer Email: tpm@gmail.com</p>
+                    <p>Comments: Excellent food and service</p>
+                    <p>Overall Rating: 90%</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#MKModifyReviewPage">
+                    <h3>Restaurant Name: Coffee Beans</h3>
+                    <p>Business Id: BN002</p>
+                    <p>State: British Columbia</p>
+                    <p>Reviewer Email: skr@gmail.com</p>
+                    <p>Comments: Good coffee!</p>
+                    <p>Overall Rating: 80%</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#MKModifyReviewPage">
+                    <h3>Restaurant Name: Snack & Chips</h3>
+                    <p>Business Id: BN003</p>
+                    <p>State: Alberta</p>
+                    <p>Reviewer Email: kpr@gmail.com</p>
+                    <p>Comments: Very good chips.</p>
+                    <p>Overall Rating: 95%</p>
+                </a>
+            </li>
+        </ul>
+
+    </section>
+
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h1>&copy; 2023 Mijung Kwon</h1>
+    </footer>
+</div>
+
+<!--Modify Review page-->
+<div id="MKModifyReviewPage" data-role="page">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h1>Modify Reviews</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#MKHomePage" data-icon="home"
+                       class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#MKAddReviewPage" data-icon="gear">Add</a></li>
+                <li><a href="#MKViewReviewPage" data-icon="star">Reviews</a></li>
+                <li><a href="#MKSettingsPage" data-icon="star">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role ="content">
+
+        <form id="frmModifyReview" name="frmModifyReview">
+            <label for="restaurantName">Restaurant Name:</label>
+            <input type="text" id="restaurantName2" name="restaurantName2" value="Outback Restaurant">
+
+            <label for="businessId">Business ID:</label>
+            <input type="text" id="businessId2" name="businessId2" value="BN001">
+
+            <label for="state">State:</label>
+            <select id="state2" name="state2" data-native-menu="false">
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                <option value="Northwest Territories">Northwest Territories</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="Nunavut">Nunavut</option>
+                <option value="Prince Edward Island">Prince Edward Island</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Yukon">Yukon</option>
+            </select>
+
+            <label for="reviewerEmail2">Reviewer Email:</label>
+            <input type="text" id="reviewerEmail2" name="reviewerEmail2" value="tpm@gmail.com">
+
+            <label for="reviewerComments2">Reviewer Comments:</label>
+            <textarea id="reviewerComments2" name="reviewerComments2">Excellent food and service</textarea>
+
+            <label for="rating2">Rating:</label>
+            <input type="range" id="rating2" name="rating2" min="1" max="100" value="90" data-highlight="true">
+
+
+            <div data-role="controlgroup" data-type="horizontal">
+                <button type="button" id="cancelButton">Cancel</button>
+                <button type="button" id="deleteButton" data-theme="b">Delete</button>
+                <button type="button" id="updateButton" class="ui-btn-active">Update</button>
+            </div>
+        </form>
+    </section>
+
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h1>&copy; 2023 Mijung Kwon</h1>
+    </footer>
+</div>
+
+<!--Settings page-->
+<div id="MKSettingsPage" data-role="page">
+    <header data-role="header" data-position="fixed" data-theme="a">
+        <h1>Settings</h1>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#MKHomePage" data-icon="home"
+                       class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#MKAddReviewPage" data-icon="gear">Add</a></li>
+                <li><a href="#MKViewReviewPage" data-icon="star">Reviews</a></li>
+                <li><a href="#MKSettingsPage" data-icon="star">Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role ="content">
+        <form id="frmSettings" name="frmSettings">
+            <label for="useremail">Default Reviewer Email:</label>
+            <input type="text" id="useremail" name="useremail">
+
+            <button type="button" id="saveButton2" class="ui-btn-active">Save</button>
+            <button type="button" id="cancelButton2" data-theme="b">Save</button>
+        </form>
+    </section>
+
+    <footer data-role="footer" data-position="fixed" data-theme="a">
+        <h1>&copy; 2023 Mijung Kwon</h1>
+    </footer>
+</div>
+
+</body>
+</html>
